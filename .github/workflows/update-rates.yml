@@ -2,7 +2,7 @@ name: Actualizar tasas de cambio
 
 on:
   schedule:
-  - cron: '*/48 * * * *'  # Ejecuta esto cada 48 minutos
+    - cron: '*/48 * * * *'  # Ejecuta esto cada 48 minutos
   workflow_dispatch:  # Permite ejecutarlo manualmente.
 
 jobs:
@@ -17,8 +17,11 @@ jobs:
           # Obtener la respuesta de la API
           curl -s 'https://openexchangerates.org/api/latest.json?app_id=d760b6e976a74d1bbc0fbc45594994f0' > rates.json
           
-          # Agregar la hora de la actualización en formato Unix
-          echo "actualizado_en: $(date +'%Y-%m-%d %H:%M:%S')" >> rates.json
+          # Agregar la hora de la actualización en formato YYYY-MM-DD HH:MM:SS
+          updated_time=$(date +'%Y-%m-%d %H:%M:%S')
+
+          # Usar jq para agregar la fecha de actualización al final del objeto JSON
+          jq '. + {actualizado_en: "'$updated_time'"}' rates.json > temp.json && mv temp.json rates.json
           
       - name: Commit cambios
         uses: EndBug/add-and-commit@v7
