@@ -1,0 +1,25 @@
+name: Actualizar tasas de cambio
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Ejecuta esto todos los días a la medianoche.
+  workflow_dispatch:  # Permite ejecutarlo manualmente.
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Obtener tasas de cambio
+        run: |
+          curl -s 'https://api.exchangeratesapi.io/latest?base=USD&access_key=d760b6e976a74d1bbc0fbc45594994f0' > rates.json
+
+      - name: Commit cambios
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Actualizar tasas de cambio'
+          add: 'rates.json'
