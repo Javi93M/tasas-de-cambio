@@ -20,16 +20,16 @@ jobs:
           # Verificar el contenido de rates.json antes de manipularlo
           cat rates.json
 
-          # Agregar la hora de la actualización en formato YYYY-MM-DD HH:MM:SS
+          # Obtener la fecha actual en formato YYYY-MM-DD HH:MM:SS
           updated_time=$(date +'%Y-%m-%d %H:%M:%S')
           
-          # Verificar la variable updated_time
+          # Verificar que la variable updated_time tenga el formato correcto
           echo "Fecha de actualización: $updated_time"
-          
-          # Usar jq para agregar la fecha de actualización al final del objeto JSON
-          jq '. + {actualizado_en: "'$updated_time'"}' rates.json > temp.json && mv temp.json rates.json
 
-          # Verificar el contenido del archivo rates.json después de agregar la fecha
+          # Usar jq para agregar la fecha de actualización al JSON
+          jq --arg updated_time "$updated_time" '. + {actualizado_en: $updated_time}' rates.json > temp.json && mv temp.json rates.json
+          
+          # Verificar el contenido de rates.json después de agregar la fecha
           cat rates.json
           
       - name: Commit cambios
