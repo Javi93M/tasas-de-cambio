@@ -14,7 +14,7 @@ jobs:
 
       - name: Obtener tasas de cambio
         run: |
-          curl -s 'https://api.exchangeratesapi.io/latest?base=USD&access_key=d760b6e976a74d1bbc0fbc45594994f0' > rates.json
+          curl -s 'https://openexchangerates.org/api/latest.json?app_id=d760b6e976a74d1bbc0fbc45594994f0' > rates.json
 
       - name: Commit cambios
         uses: EndBug/add-and-commit@v7
