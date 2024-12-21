@@ -1,10 +1,1 @@
-{
-    "base_currency": "USD",
-    "rates": {
-      "EUR": 0.85,
-      "JPY": 110.0,
-      "GBP": 0.75
-    },
-    "last_updated": "2024-12-21"
-  }
-  
+{"success":false,"error":{"code":101,"type":"invalid_access_key","info":"You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"}}
