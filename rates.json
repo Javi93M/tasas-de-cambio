@@ -1,0 +1,10 @@
+{
+    "base_currency": "USD",
+    "rates": {
+      "EUR": 0.85,
+      "JPY": 110.0,
+      "GBP": 0.75
+    },
+    "last_updated": "2024-12-21"
+  }
+  
