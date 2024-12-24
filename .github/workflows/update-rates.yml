@@ -2,7 +2,7 @@ name: Actualizar tasas de cambio
 
 on:
   schedule:
-    - cron: '*/48 * * * *'  # Ejecuta esto cada 48 minutos
+    - cron: '0 * * * *'  # Ejecuta esto cada hora, a la hora en punto
   workflow_dispatch:  # Permite ejecutarlo manualmente.
 
 jobs:
