@@ -1,7 +1,7 @@
 {
   "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
   "license": "https://openexchangerates.org/license",
-  "timestamp": 1741996807,
+  "timestamp": 1742004002,
   "base": "USD",
   "rates": {
     "AED": 3.67265,
@@ -25,12 +25,12 @@
     "BOB": 6.905691,
     "BRL": 5.7459,
     "BSD": 1,
-    "BTC": 0.000011910509,
+    "BTC": 0.000011852516,
     "BTN": 86.863261,
     "BWP": 13.615125,
     "BYN": 3.270196,
     "BZD": 2.007309,
-    "CAD": 1.43855,
+    "CAD": 1.43895,
     "CDF": 2861.823453,
     "CHF": 0.8849,
     "CLF": 0.024242,
@@ -174,5 +174,5 @@
     "ZMW": 28.605885,
     "ZWL": 322
   },
-  "actualizado_en": "2025-03-15 00:47:32"
+  "actualizado_en": "2025-03-15 02:14:23"
 }
